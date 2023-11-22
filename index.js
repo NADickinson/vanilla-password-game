@@ -16,6 +16,20 @@ const rules = [
     validator: (value) => /[0123456789]/.test(value),
     id: 2,
   },
+  {
+    message: "Your password must include an uppercase letter.",
+    ruleText: "Rule 3",
+    hasPassed: false,
+    hasRendered: false,
+    validator: (value) => /[A-Z]/.test(value),
+  },
+  {
+    message: "Your password must include a special character.",
+    ruleText: "Rule 4",
+    hasPassed: false,
+    hasRendered: false,
+    validator: (value) => /[./<>?;:"'`!@#$%^&*()\[\]{}_+=|\\-]/.test(value),
+  },
 ];
 
 const promptContainer = document.getElementById("promptContainer");
