@@ -30,6 +30,21 @@ const rules = [
     hasRendered: false,
     validator: (value) => /[./<>?;:"'`!@#$%^&*()\[\]{}_+=|\\-]/.test(value),
   },
+  {
+    message: "The digits in your password must add up to 25, e.g: 55=10",
+    ruleText: "Rule 5",
+    hasPassed: false,
+    hasRendered: false,
+    validator: (value) => {
+      let sum = 0;
+      for (let i = 0; i < value.length; i++) {
+        if (!isNaN(Number(value[i]))) {
+          sum += Number(value[i]);
+        }
+      }
+      return sum === 25;
+    },
+  },
 ];
 
 const promptContainer = document.getElementById("promptContainer");
