@@ -7,7 +7,6 @@ const rules = [
     validator: (value) => value.length >= 5,
     id: 1,
   },
-
   {
     message: "Your password must include a number.",
     ruleText: "Rule 2",
@@ -44,6 +43,16 @@ const rules = [
       }
       return sum === 25;
     },
+  },
+  {
+    message: "Your password must include a month of the year.",
+    ruleText: "Rule 6",
+    hasPassed: false,
+    hasRendered: false,
+    validator: (value) =>
+      /january|february|march|april|may|june|july|august|september|october|november|december/i.test(
+        value
+      ),
   },
 ];
 
