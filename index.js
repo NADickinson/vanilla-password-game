@@ -54,6 +54,13 @@ const rules = [
         value
       ),
   },
+  {
+    message: "Your password must include a roman numeral.",
+    ruleText: "Rule 7",
+    hasPassed: false,
+    hasRendered: false,
+    validator: (value) => /[IVX]/.test(value),
+  },
 ];
 
 const promptContainer = document.getElementById("promptContainer");
